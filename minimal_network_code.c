@@ -43,7 +43,6 @@ static unsigned char *Input_2;
 // static unsigned char *imageDemosaiced;
 // static signed char *imageCropped;
 static signed char *Output_1;
-static float actions[3];
 
 static float scale_output = 0.0078125;//0.011393229;
 static float scale_output_2 = 0.0078125;//0.00390625;
@@ -195,7 +194,7 @@ void combined_task(void *parameters) {
   
     pi_cluster_send_task_to_cl(&cluster_dev, task);
     // float value = triangle_wave(main_iteration) - 0.5;
-    cpxPrintToConsole(LOG_TO_CRTP, "outputs are %hd %hd %hd!\n", Output_1[0],Output_1[1],Output_1[2]);
+    cpxPrintToConsole(LOG_TO_CRTP, "outputs are %hhd %hhd %hhd!\n", Output_1[0],Output_1[1],Output_1[2]);
 
     main_iteration++;
 
